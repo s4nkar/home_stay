@@ -24,6 +24,11 @@
 
 .custom-header-b{
     border-bottom: 0.5px solid #454948 !important;
+    display: none;
+}
+
+.custom-header-b-block{
+    display: block !important;
 }
 
 .testimonial-above .testimonial-avatar img {
@@ -34,6 +39,7 @@
     width: 20px !important;
     height: 20px !important;
 }
+
 .testimonial-icon .hicon {
     --hicon-size: 67% !important;
 }
