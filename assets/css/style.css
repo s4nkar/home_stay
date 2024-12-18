@@ -6,6 +6,8 @@
     bottom: 3px;
 }
 
+
+
 .navbar-nav-custom{
     display: flex !important;
     justify-content: end !important;
@@ -39,5 +41,8 @@
 @media screen and (max-width: 950px) {
     .logo-text-lg {
         display: none;
+    }
+    .custom-home-bg{
+        height: 60dvh;
     }
 }
