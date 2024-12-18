@@ -24,6 +24,18 @@
     border-bottom: 0.5px solid #454948 !important;
 }
 
+.testimonial-above .testimonial-avatar img {
+    width: 45px !important;
+}
+
+.testimonial-above .testimonial-avatar .testimonial-icon {
+    width: 20px !important;
+    height: 20px !important;
+}
+.testimonial-icon .hicon {
+    --hicon-size: 67% !important;
+}
+
 @media screen and (max-width: 950px) {
     .logo-text-lg {
         display: none;
