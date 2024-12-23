@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - YASHAS - Embrace Nature, Stay in Comfort</title>
+    <title>Contact - YASHAS HOMESTAY - Embrace Nature, Stay in Comfort</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Themenix.com">
@@ -167,28 +167,32 @@
                     <div class="col-12 col-xl-6">
                         <!-- Contact Form -->
                         <div class="form-contact rounded shadow-sm">
-                            <form class="needs-validation" method="post" novalidate="">
+                            <form class="needs-validation" method="post" novalidate="" id="main-contect-form">
                                 <div class="border-bottom pb-4 mb-4">
                                     <h2 class="text-white mb-0">Looking for any help?</h2>
                                 </div>
                                 <div class="alert d-none" role="alert" id="msg_alert"></div>
                                 <div class="form-floating mb-4">
-                                    <input id="txtYourName" type="text" name="yourname" class="form-control shadow-sm" placeholder="Your Name" required>
-                                    <label for="txtYourName">Your Name *</label>
+                                    <input id="from_name" type="text" onblur="handleValidation('from_name')" name="yourname" class="form-control shadow-sm" placeholder="Your Name" required>
+                                    <label for="from_name">Your Name *</label>
+                                    <span id="from_name-error" hidden class="error-span">Name is Required</span>
                                 </div>
                                 <div class="form-floating mb-4">
-                                    <input id="txtEmail" type="email" name="email" class="form-control shadow-sm" placeholder="Email" required>
-                                    <label for="txtEmail">Your Email *</label>
+                                    <input id="email" type="email" onblur="handleValidation('email')" name="email" class="form-control shadow-sm" placeholder="Email" required>
+                                    <label for="email">Your Email *</label>
+                                    <span id="email-error" hidden class="error-span">Email is Required</span>
                                 </div>
                                 <div class="form-floating mb-4">
-                                    <input id="txtSubject" type="text" name="subject" class="form-control shadow-sm" placeholder="Subject" required>
-                                    <label for="txtSubject">Subject *</label>
+                                    <input id="subject" type="text" onblur="handleValidation('subject')" name="subject" class="form-control shadow-sm" placeholder="Subject" required>
+                                    <label for="subject">Subject *</label>
+                                    <span id="subject-error" hidden class="error-span">Subject is Required</span>
                                 </div>
                                 <div class="form-floating mb-4">
-                                    <textarea id="txtMessage" name="message" class="form-control shadow-sm" placeholder="Message" style="height: 150px" required></textarea>
-                                    <label for="txtMessage">Message *</label>
+                                    <textarea id="message" name="message" onblur="handleValidation('message')" class="form-control shadow-sm" placeholder="Message" style="height: 150px" required></textarea>
+                                    <label for="message">Message *</label>
+                                    <span id="message-error" hidden class="error-span">Message is Required</span>
                                 </div>
-                                <button type="submit" class="btn btn-light mnw-180">
+                                <button type="button" onclick="handleFormSubmit(event)" class="btn btn-light mnw-180">
                                     <i class="hicon hicon-email-envelope"></i>
                                     <span> Send message</span>
                                 </button>
@@ -366,8 +370,20 @@
 
     <script defer src="assets/js/theme-1.min.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/contact.js"></script>
     <script defer src="assets/js/theme-2.min.js"></script>
     <script defer src="assets/js/theme-3.min.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("Ox453wGmDbm0QM4i_");
+    })();
+</script>
 
     <script>
         const code = new URLSearchParams(window.location.search).get('code');

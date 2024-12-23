@@ -44,6 +44,16 @@
     --hicon-size: 67% !important;
 }
 
+.error-span{
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(200, 33, 33);
+}
+
+.swal-button{
+    background-color: #6a49f2 !important;
+}
+
 @media screen and (max-width: 950px) {
     .logo-text-lg {
         display: none;
