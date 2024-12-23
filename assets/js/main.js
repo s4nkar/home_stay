@@ -7,16 +7,16 @@ const handleSubHeader = () => {
     // Toggle the custom-header-b-block class based on screen size
     if (isSmallDevice) {
         subHeader.classList.add('custom-header-b-block');
-        subHeaderLogo.classList.add('d-none');
+        subHeaderLogo.classList.add('d-none-custom');
     } else {
         subHeader.classList.remove('custom-header-b-block');
-        subHeaderLogo.classList.remove('d-none');
+        subHeaderLogo.classList.remove('d-none-custom');
     }
     
     // Handle scroll behavior for custom-header-b class
     if (window.scrollY >= 250) {
         subHeader.classList.remove('custom-header-b');
-        subHeaderLogo.classList.remove('d-none');
+        subHeaderLogo.classList.remove('d-none-custom');
     } else {
         subHeader.classList.add('custom-header-b');
     }
