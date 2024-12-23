@@ -74,6 +74,6 @@
         display: none;
     }
     .custom-home-bg {
-        height: 60dvh; /* Only this will be applied if max-height is not met */
+        height: 90dvh; /* Only this will be applied if max-height is not met */
     }
 }
