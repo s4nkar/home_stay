@@ -1,39 +1,51 @@
-window.addEventListener('scroll', function () {
-    const isSmallDevice = window.innerWidth <= 950; 
+// Function to handle the visibility of the sub-header based on device size
+const handleSubHeader = () => {
+    const isSmallDevice = window.innerWidth <= 950;
+    const subHeader = document.getElementById('sub-header');
+    const subHeaderLogo = document.querySelector('.navbar-brand');
+    
+    // Toggle the custom-header-b-block class based on screen size
     if (isSmallDevice) {
-        document.getElementById('sub-header').classList.add('custom-header-b-block');
-    }else{
-        document.getElementById('sub-header').classList.remove('custom-header-b-block');
-    }
-    if (window.scrollY >= 250) {
-        document.getElementById('sub-header').classList.remove('custom-header-b');
+        subHeader.classList.add('custom-header-b-block');
+        subHeaderLogo.classList.add('d-none');
     } else {
-        document.getElementById('sub-header').classList.add('custom-header-b');
-        
+        subHeader.classList.remove('custom-header-b-block');
+        subHeaderLogo.classList.remove('d-none');
     }
-});
-
-window.addEventListener('load', function () {
-    const isSmallDevice = window.innerWidth <= 950; 
-    if (isSmallDevice) {
-        document.getElementById('sub-header').classList.add('custom-header-b-block');
-    }else{
-        document.getElementById('sub-header').classList.remove('custom-header-b-block');
-    }
+    
+    // Handle scroll behavior for custom-header-b class
     if (window.scrollY >= 250) {
-        document.getElementById('sub-header').classList.remove('custom-header-b');
+        subHeader.classList.remove('custom-header-b');
+        subHeaderLogo.classList.remove('d-none');
     } else {
-        document.getElementById('sub-header').classList.add('custom-header-b');
+        subHeader.classList.add('custom-header-b');
     }
-})
+};
 
-window.addEventListener('resize', function () {
-    const isSmallDevice = window.innerWidth <= 1200; 
+// Function to handle the visibility of the banner review bar based on screen size
+const handleBannerReviewBar = () => {
+    const isSmallDevice = window.innerWidth <= 1200;
     const bannerReviewBar = document.getElementById('banner-review-bar');
     
+    // Toggle the hidden attribute based on screen size
     if (isSmallDevice) {
         bannerReviewBar.setAttribute('hidden', true);
     } else {
         bannerReviewBar.removeAttribute('hidden');
     }
+};
+
+// Event listener for scroll
+window.addEventListener('scroll', handleSubHeader);
+
+// Event listener for load
+window.addEventListener('load', function () {
+    handleSubHeader(); // Check initial visibility for sub-header
+    handleBannerReviewBar(); // Check initial visibility for banner review bar
+});
+
+// Event listener for resize
+window.addEventListener('resize', function () {
+    handleSubHeader(); // Re-check sub-header visibility on resize
+    handleBannerReviewBar(); // Re-check banner review bar visibility on resize
 });

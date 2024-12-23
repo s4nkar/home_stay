@@ -28,7 +28,12 @@
 }
 
 .custom-header-b-block{
+    border-bottom: 0.5px solid transparent !important;
     display: block !important;
+}
+
+.d-none{
+    display: none !important;
 }
 
 .testimonial-above .testimonial-avatar img {
@@ -54,11 +59,21 @@
     background-color: #6a49f2 !important;
 }
 
+@media screen and (max-width: 950px) and (max-height: 721px) {
+    .logo-text-lg {
+        display: none;
+    }
+    .custom-home-bg {
+        height: 90vh !important; /* Fallback to regular vh for broader support */
+        height: 90dvh !important; /* If dvh is supported */
+    }
+}
+
 @media screen and (max-width: 950px) {
     .logo-text-lg {
         display: none;
     }
-    .custom-home-bg{
-        height: 60dvh;
+    .custom-home-bg {
+        height: 60dvh; /* Only this will be applied if max-height is not met */
     }
 }
