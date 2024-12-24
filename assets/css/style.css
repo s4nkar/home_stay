@@ -55,9 +55,57 @@
     color: rgb(200, 33, 33);
 }
 
+.not-free{
+    text-decoration: line-through !important;
+}
+
+.f-1rem{
+    font-size: 1rem !important;
+}
+
 .swal-button{
     background-color: #6a49f2 !important;
 }
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: 100%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 10;
+  }
+  
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow pointing down */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  
+  .tooltip-container:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
 
 @media screen and (max-width: 950px) and (max-height: 721px) {
     .logo-text-lg {
