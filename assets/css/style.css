@@ -6,8 +6,6 @@
     bottom: 3px;
 }
 
-
-
 .navbar-nav-custom{
     display: flex !important;
     justify-content: end !important;
@@ -113,8 +111,8 @@
         display: none;
     }
     .custom-home-bg {
-        height: 90vh !important; /* Fallback to regular vh for broader support */
-        height: 90dvh !important; /* If dvh is supported */
+        height: 100vh !important; /* Fallback to regular vh for broader support */
+        height: 100dvh !important; /* If dvh is supported */
     }
 }
 
@@ -123,6 +121,6 @@
         display: none;
     }
     .custom-home-bg {
-        height: 90dvh; /* Only this will be applied if max-height is not met */
+        height: 100dvh; /* Only this will be applied if max-height is not met */
     }
 }
